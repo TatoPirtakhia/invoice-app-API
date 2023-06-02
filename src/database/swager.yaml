@@ -1,0 +1,185 @@
+openapi: 3.0.0
+info:
+  title: Entertainment
+  description: Films API
+  version: 0.1.9
+servers:
+  - url: https://movies-doxx.onrender.com/api
+    description: render server
+  - url: http://localhost:3000/api
+    description: local server
+paths:
+  /NewInvoice:
+    post:
+      tags:
+        - Newnvoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                createdAt:
+                  type: string
+                paymentDue:
+                  type: string
+                paymentTerms:
+                  type: number
+                clientName:
+                  type: strin
+                clientEmail:
+                  type: string
+                status:
+                  type: string
+                senderAddress:
+                  type: object
+                  properties:
+                    street: 
+                      type: string
+                    city: 
+                      type: string
+                    postCode: 
+                      type: string
+                    country: 
+                      type: string
+                clientAddress:
+                      type: object
+                      properties:
+                        street: 
+                          type: string
+                        city: 
+                          type: string
+                        postCode: 
+                          type: string
+                        country: 
+                          type: string
+                items:
+                  type: array
+                  items: 
+                    type: object
+                    properties:
+                      name: 
+                      type: string
+                      quantity: 
+                        type: number
+                      price: 
+                        type: number
+                      total: 
+                        type: number
+            example:
+              id: RT3080
+              createdAt: '2021-08-18'
+              paymentDue: '2021-08-19'
+              description: Re-branding
+              paymentTerms: 1
+              clientName: Jensen Huang
+              clientEmail: jensenh@mail.com
+              status: paid
+              senderAddress:
+                street: 19 Union Terrace
+                city: London
+                postCode: E1 3EZ
+                country: United Kingdom
+              clientAddress:
+                street: 106 Kendell Street
+                city: Sharrington
+                postCode: NR24 5WQ
+                country: United Kingdom
+              items:
+                - name: Brand Guidelines
+                  quantity: 1
+                  price: 1800.90
+                  total: 1800.90
+      responses:
+        '201':
+          description: Created succefully
+  /EditInvoice:
+    post:
+      tags:
+        - EditInvoice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                createdAt:
+                  type: string
+                paymentDue:
+                  type: string
+                paymentTerms:
+                  type: number
+                clientName:
+                  type: strin
+                clientEmail:
+                  type: string
+                status:
+                  type: string
+                senderAddress:
+                  type: object
+                  properties:
+                    street: 
+                      type: string
+                    city: 
+                      type: string
+                    postCode: 
+                      type: string
+                    country: 
+                      type: string
+                clientAddress:
+                      type: object
+                      properties:
+                        street: 
+                          type: string
+                        city: 
+                          type: string
+                        postCode: 
+                          type: string
+                        country: 
+                          type: string
+                items:
+                  type: array
+                  items: 
+                    type: object
+                    properties:
+                      name: 
+                      type: string
+                      quantity: 
+                        type: number
+                      price: 
+                        type: number
+                      total: 
+                        type: number
+            example:
+              id: RT3080
+              createdAt: '2021-08-18'
+              paymentDue: '2021-08-19'
+              description: Re-branding
+              paymentTerms: 1
+              clientName: Jensen Huang
+              clientEmail: jensenh@mail.com
+              status: paid
+              senderAddress:
+                street: 19 Union Terrace
+                city: London
+                postCode: E1 3EZ
+                country: United Kingdom
+              clientAddress:
+                street: 106 Kendell Street
+                city: Sharrington
+                postCode: NR24 5WQ
+                country: United Kingdom
+              items:
+                - name: Brand Guidelines
+                  quantity: 1
+                  price: 1800.90
+                  total: 1800.90
+      responses:
+        '201':
+          description: Edited succefully
