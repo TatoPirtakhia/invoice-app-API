@@ -30,6 +30,7 @@ const invoiceJoiSchema = async () => {
         total: Joi.number().required(),
       })
     ),
+    total: Joi.number().required()
   });
 };
 

@@ -23,6 +23,7 @@ export const NewInvoice = async (req: Request, res: Response) => {
     senderAddress,
     clientAddress,
     items,
+    total
   } = data;
   const invoice = await Invoice.findOne({
     id,
@@ -42,6 +43,7 @@ export const NewInvoice = async (req: Request, res: Response) => {
       senderAddress,
       clientAddress,
       items,
+      total
     });
     return res.status(201).json("invoise created succesfully");
   }

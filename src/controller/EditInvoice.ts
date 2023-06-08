@@ -23,6 +23,7 @@ export const EditInvoice = async (req: Request, res: Response) => {
     senderAddress,
     clientAddress,
     items,
+    total
   } = data;
 
   const invoice = await Invoice.findOne({ id });
@@ -39,6 +40,7 @@ export const EditInvoice = async (req: Request, res: Response) => {
     invoice.senderAddress = senderAddress;
     invoice.clientAddress = clientAddress;
     invoice.items = items;
+    invoice.total = total
     await invoice.save();
     return res.status(201).json("changed succesfully");
   }else {

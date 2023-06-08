@@ -29,6 +29,10 @@ const invoiceSchema = new Schema({
       total: { type:  Schema.Types.Number, required: true },
     },
   ],
+  total:{
+    type: Schema.Types.Number,
+    required: true
+  }
 });
 
 const Invoice = model("Invoice", invoiceSchema);

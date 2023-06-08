@@ -69,6 +69,8 @@ paths:
                         type: number
                       total: 
                         type: number
+                total:
+                  type: number
             example:
               id: RT3080
               createdAt: '2021-08-18'
@@ -93,6 +95,7 @@ paths:
                   quantity: 1
                   price: 1800.90
                   total: 1800.90
+              total: 1800.90
       responses:
         '201':
           description: Created succefully
@@ -183,3 +186,35 @@ paths:
       responses:
         '201':
           description: Edited succefully
+  /getInvoices:
+    get:
+      tags:
+        - getInvoices
+      responses:
+        "200":
+          description: Successfully fetched
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+  /deleteInvoice:
+    delete:
+      tags:
+        - DeleteInvoice
+      requestBody:
+        description: delete Completed
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+            example:
+              id: RT3080
+      responses:
+        "200":
+          description: invoice deleted
