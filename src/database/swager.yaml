@@ -204,12 +204,12 @@ paths:
       tags:
         - DeleteInvoice
       requestBody:
-        description: delete Completed
+        description: delete invoice
         required: true
         content:
           application/json:
             schema:
-              type: object
+              type: string
               properties:
                 id:
                   type: string

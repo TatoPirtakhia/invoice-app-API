@@ -8,6 +8,6 @@ const Route = express.Router();
 Route.post("/NewInvoice", NewInvoice);
 Route.post("/EditInvoice", EditInvoice);
 Route.get("/getInvoices", GetInvoices);
-Route.delete("/deleteInvoice", deleteInvoice);
+Route.delete("/deleteInvoice/:id", deleteInvoice);
 
 export default Route
