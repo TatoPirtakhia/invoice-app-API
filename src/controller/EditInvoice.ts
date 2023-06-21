@@ -23,7 +23,7 @@ export const EditInvoice = async (req: Request, res: Response) => {
     senderAddress,
     clientAddress,
     items,
-    total
+    total,
   } = data;
 
   const invoice = await Invoice.findOne({ id });
@@ -40,12 +40,9 @@ export const EditInvoice = async (req: Request, res: Response) => {
     invoice.senderAddress = senderAddress;
     invoice.clientAddress = clientAddress;
     invoice.items = items;
-    invoice.total = total
+    invoice.total = total;
     await invoice.save();
-    return res.status(201).json("changed succesfully");
-  }else {
-    return res.status(201).json("invoice with this id not found");
+    return res.status(200).json("changed succesfully");
   }
- 
- 
+  return res.status(404).json("invoice with this id not found");
 };

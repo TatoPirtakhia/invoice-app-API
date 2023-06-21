@@ -10,5 +10,5 @@ export const deleteInvoice = async (req: Request, res: Response) => {
       return res.status(200).json('succesfully delete');
     }
 
-  return res.status(201).json('somthing went wrong');
+  return res.status(404).json('somthing went wrong');
 };

@@ -29,7 +29,7 @@ export const NewInvoice = async (req: Request, res: Response) => {
     id,
   });
   if (invoice) {
-    return res.status(201).json("Please edit or creeate new invoice");
+    return res.status(302).json("Please edit or creeate new invoice");
   } else {
     await Invoice.create({
       id,
