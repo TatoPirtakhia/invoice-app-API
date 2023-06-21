@@ -29,7 +29,7 @@ const invoiceJoiSchema = async () => {
         price: Joi.number().positive().required(),
         total: Joi.number().positive().required(),
       })
-    ),
+    ).min(1).required(),
     total: Joi.number().positive().required(),
   });
 };
