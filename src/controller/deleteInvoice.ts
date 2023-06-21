@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import Invoice from "model/invoiceModel";
 export const deleteInvoice = async (req: Request, res: Response) => {
     const {id} = req.params
-    console.log(id)
     const invoice = await Invoice.findOne({id});
 
     if (invoice){

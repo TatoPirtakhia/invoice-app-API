@@ -6,7 +6,7 @@ const invoiceJoiSchema = async () => {
     createdAt: Joi.string().required(),
     paymentDue: Joi.string().required(),
     description: Joi.string().required(),
-    paymentTerms: Joi.number().required(),
+    paymentTerms: Joi.number().positive().required(),
     clientName: Joi.string().required(),
     clientEmail: Joi.string().email().required(),
     status: Joi.string().required(),
@@ -25,12 +25,12 @@ const invoiceJoiSchema = async () => {
     items: Joi.array().items(
       Joi.object({
         name: Joi.string().required(),
-        quantity: Joi.number().required(),
-        price: Joi.number().required(),
-        total: Joi.number().required(),
+        quantity: Joi.number().positive().required(),
+        price: Joi.number().positive().required(),
+        total: Joi.number().positive().required(),
       })
     ),
-    total: Joi.number().required()
+    total: Joi.number().positive().required(),
   });
 };
 
