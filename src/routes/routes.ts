@@ -6,7 +6,7 @@ import express from "express";
 const Route = express.Router();
 
 Route.post("/NewInvoice", NewInvoice);
-Route.post("/EditInvoice", EditInvoice);
+Route.put("/EditInvoice", EditInvoice);
 Route.get("/getInvoices", GetInvoices);
 Route.delete("/deleteInvoice/:id", deleteInvoice);
 

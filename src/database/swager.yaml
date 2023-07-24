@@ -100,7 +100,7 @@ paths:
         '201':
           description: Created succefully
   /EditInvoice:
-    post:
+    put:
       tags:
         - EditInvoice
       requestBody:
@@ -159,6 +159,8 @@ paths:
                         type: number
                       total: 
                         type: number
+                total:
+                  type: number
             example:
               id: RT3080
               createdAt: '2021-08-18'
@@ -183,6 +185,7 @@ paths:
                   quantity: 1
                   price: 1800.90
                   total: 1800.90
+              total: 1890
       responses:
         '201':
           description: Edited succefully
